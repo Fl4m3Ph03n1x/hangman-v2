@@ -1,5 +1,8 @@
 # hangman-v2
 
+This is a repository for the Gnome's course in Eilixir. 
+It coverts processes with OTP, application architecture and also Phoenix and Phoenix LiveView.
+Even if I (or you) don't agree with everything, there is still a lot to be learned for sure !
 ## .gitattributes
 
 The Dicionary app has a list of words. Normally this would pose no issue, but on windows Elixir's file read will return `\r` characters
