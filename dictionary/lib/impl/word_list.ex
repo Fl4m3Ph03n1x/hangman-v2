@@ -4,7 +4,7 @@ defmodule Dictionary.Impl.WordList do
 
   @spec word_list :: t
   def word_list, do:
-    "assets/words.txt"
+    "C:\\Users\\User\\Workplace\\hangman-v2\\dictionary\\assets\\words.txt"
     |> File.read!()
     |> String.split("\n", trim: true)
 
