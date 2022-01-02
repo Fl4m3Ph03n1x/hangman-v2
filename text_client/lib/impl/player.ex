@@ -27,9 +27,9 @@ defmodule TextClient.Impl.Player do
     |> current_word()
     |> IO.puts()
 
-    game
-    |> Hangman.make_move(get_guess())
-    |> interact()
+
+    tally = Hangman.make_move(game, get_guess())
+    interact({game, tally})
   end
 
   @spec feedback_message(tally) :: String.t
@@ -39,6 +39,8 @@ defmodule TextClient.Impl.Player do
 
   defp feedback_message(%{game_state: :initializing, letters: letters}), do:
     "Welcome! I am thinking of a word with #{length(letters)} letters!"
+
+  def feedback_for(%{game_state: :already_used}), do: "You already used that letter"
 
   @spec current_word(tally) :: [String.t]
   defp current_word(%{letters: letters, turns_left: turns, used: used}), do: [
