@@ -4,16 +4,29 @@ defmodule HtmlAppWeb.HangmanController do
   alias Hangman
   alias Plug.Conn
 
-  @spec index(Conn.t, any) :: Conn.t
+  @spec index(Conn.t, map) :: Conn.t
   def index(conn, _params) do
     render(conn, "index.html")
   end
 
-  @spec new(Conn.t, any) :: Conn.t
+  @spec new(Conn.t, map) :: Conn.t
   def new(conn, _params) do
     game = Hangman.new_game()
     tally = Hangman.tally(game)
-    put_session(conn, :game, game)
-    render(conn, "game.html", tally: tally)
+
+    conn
+    |> put_session(:game, game)
+    |> render("game.html", tally: tally)
+  end
+
+  @spec update(Conn.t, map) :: Conn.t
+  def update(conn, params = %{"make_move" => %{"guess" => guess}}) do
+    tally =
+      conn
+      |> get_session(:game)
+      |> Hangman.make_move(guess)
+
+    put_in(conn.params["make_move"]["guess"], "")
+    |> render("game.html", tally: tally)
   end
 end
