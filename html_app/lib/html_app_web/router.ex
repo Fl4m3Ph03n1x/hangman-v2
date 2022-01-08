@@ -20,6 +20,9 @@ defmodule HtmlAppWeb.Router do
     get "/", HangmanController, :index
     post "/", HangmanController, :new
     put "/", HangmanController, :update
+
+    # used for Post->Redirect->Get so we avoid duplicate POSTs on browser refresh
+    get "/current", HangmanController, :show
   end
 
   # Other scopes may use custom stacks.
