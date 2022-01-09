@@ -23,9 +23,8 @@
             </tr>
         </table>
 
-        <%= form_for(@conn, Routes.hangman_path(@conn, :update), [as: "make_move", method: :put], fn form -> %>
-            <%= text_input(form, :guess) %>
-            <%= submit("Make a guess") %>
-        <% end) %>
+        <%= move_status(@tally.game_state) |> raw %>
+        
+        <%= continue_or_try_again(@conn, @tally.game_state) %>
     </div>
 </div>
