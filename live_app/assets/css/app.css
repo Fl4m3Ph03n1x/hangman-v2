@@ -3,9 +3,19 @@
 
 .one-letter {color: #8888bb;}
 .one-letter.correct {color: #88bb88}
+.one-letter.wrong {color: #bb8888}
 
 .letters .one-letter {
   width: 1em;
   font-size: 300%;
   display: inline-block;
+}
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3em 0.4em;
+  font-size: 150%;
+  margin-bottom: 10%;
 }
