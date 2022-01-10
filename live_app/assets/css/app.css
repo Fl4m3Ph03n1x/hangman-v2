@@ -1,0 +1,11 @@
+/* This file is for your main application CSS */
+@import "./phoenix.css";
+
+.one-letter {color: #8888bb;}
+.one-letter.correct {color: #88bb88}
+
+.letters .one-letter {
+  width: 1em;
+  font-size: 300%;
+  display: inline-block;
+}
