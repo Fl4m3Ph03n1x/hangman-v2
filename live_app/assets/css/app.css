@@ -1,5 +1,39 @@
 /* This file is for your main application CSS */
 @import "./phoenix.css";
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+/* Overall page layout */
+body {
+  font-family: 'Short Stack', cursive;
+}
+
+.game-holder {
+  max-height: 70%; 
+  margin-top: 15%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.game-holder .figure {
+  flex-basis: 40%;
+  min-width: 400px;
+  
+} 
+
+/* Styling */
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3em 0.4em;
+  font-size: 150%;
+  margin-bottom: 10%;
+}
 
 .one-letter {color: #8888bb;}
 .one-letter.correct {color: #88bb88}
@@ -11,11 +45,30 @@
   display: inline-block;
 }
 
-.alphabet {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.3em 0.4em;
-  font-size: 150%;
-  margin-bottom: 10%;
+.one-letter {
+  display: inline;
+} 
+
+/* Figure */
+
+.figure svg {
+  max-height: 60vh;
 }
+
+.turns-left {
+  display: inline-block;
+  position: relative;
+  top: -30vh;
+  margin-right: 20%;
+  max-width: 30%;
+  color: #552244;
+}
+  
+
+.hide-component {
+    opacity: 0.1;
+}
+
+svg path {
+    transition: opacity 0.5s;
+} 

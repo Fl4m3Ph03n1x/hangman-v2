@@ -1,7 +1,7 @@
 defmodule LiveAppWeb.Live.Game.WordSoFar do
   use LiveAppWeb, :live_component
 
-  alias Elixir.Phoenix.LiveView.{Rendered, Socket}
+  alias Elixir.Phoenix.LiveView.Rendered
 
   @states %{
     already_used: "You already picked that letter !",
@@ -11,11 +11,6 @@ defmodule LiveAppWeb.Live.Game.WordSoFar do
     lost: "Game over ...",
     initializing: "Make a guess to start!"
   }
-
-  @spec mount(Socket.t) :: {:ok, Socket.t}
-  def mount(socket) do
-    {:ok, socket}
-  end
 
   @spec render(map) :: Rendered.t
   def render(assigns) do
