@@ -24,9 +24,4 @@ defmodule HtmlAppWeb.Router do
     # used for Post->Redirect->Get so we avoid duplicate POSTs on browser refresh
     get "/current", HangmanController, :show
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", HtmlAppWeb do
-  #   pipe_through :api
-  # end
 end
