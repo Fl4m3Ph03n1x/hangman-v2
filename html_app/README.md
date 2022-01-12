@@ -26,7 +26,7 @@ Win or lose, the option is alwaays there!
 
 Each time a new game is started a new `Hangman` server is started, so you can have many Hangman games at the same time!
 
-### See it in action
+## See it in action
 
 To start your Phoenix server:
 

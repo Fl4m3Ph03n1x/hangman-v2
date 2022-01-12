@@ -1,4 +1,8 @@
 defmodule TextClient.Impl.Player do
+  @moduledoc """
+  Has the code for the player interaction with the terminal.
+  It prints messages and manages the feedback loop.
+  """
 
   alias Hangman
 
@@ -6,11 +10,17 @@ defmodule TextClient.Impl.Player do
   @typep tally :: Hangman.tally
   @typep state :: {game, tally}
 
+  @doc """
+  Starts the player feedback loop. Takes a game as a parameter (which is the pid of the remote server)
+  and starts the process.
+  """
   @spec start(game) :: :ok
-  def start(game) do
-    interact({game, Hangman.tally(game)})
-  end
+  def start(game), do: interact({game, Hangman.tally(game)})
 
+  @doc """
+  The feedback loop. Will keep asking the player for input in an infinite loop until the player
+  either wins or loses the game.
+  """
   @spec interact(state) :: :ok
   def interact({_game, _tally = %{game_state: :won}}), do: IO.puts("You won! Yeeyy!")
 
