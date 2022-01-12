@@ -25,7 +25,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 ## Things I learned
 
 The Gnome's standard is as follows:
- - This app was created with `--no-ecto --no-mailer --no-gettext --no-dashboard`. We don't need them!
+ - This app was created with `--no-ecto --no-mailer --no-gettext --no-dashboard --live`.
  - `lib/live_app` folder is for application logic. We don't have that here so it is empty.
  - `lib/live_app_web` folder is for front-end code. This is what we will be working with!
  - Since this is a LiveView App, we won't be using controllers. We delete the `controllers` folder and replace it with a `live` folder!
