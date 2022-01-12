@@ -16,3 +16,12 @@ This project comes with a `.iex.exs` configuration file that makes the `iex` loo
 I recommend its usage, as readability is highly improved for most cases. However to be able to use it in Windows, a change in the registry is needed:
 
 - Enabled ANSI Colors (https://superuser.com/a/1300251/222770)
+
+## Dependencies Graph
+
+Following is a dependencies graph between the different applications.
+These are uniderectional dependencies, often a good sign of a good architecture.
+
+The `->` arrow means, "Used By"
+
+![dependencies-graph](./deps.svg)
