@@ -3,6 +3,15 @@
 This is a repository for the Gnome's course in Eilixir. 
 It coverts processes with OTP, application architecture and also Phoenix and Phoenix LiveView.
 Even if I (or you) don't agree with everything, there is still a lot to be learned for sure !
+
+Each application has a README file detailing the lessons learned and a quick usage guide. 
+Since each application is quite simple, I feel like no addtional information is needed before jumping into the code. 
+
+The versions of Elixir/Erlang and Phoenix used for all the apps are the following:
+- Elixir 1.13.1
+- Erlang OTP 24
+- Phoenix 1.6.5
+
 ## .gitattributes
 
 The Dicionary app has a list of words. Normally this would pose no issue, but on windows Elixir's file read will return `\r` characters
@@ -25,3 +34,4 @@ These are uniderectional dependencies, often a good sign of a good architecture.
 The `->` arrow means, "Used By"
 
 ![dependencies-graph](./deps.svg)
+
