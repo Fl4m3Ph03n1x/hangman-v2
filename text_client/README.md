@@ -33,3 +33,4 @@ The Gnome's teachings can be summarized as follows:
 - `lib/text_client` is the Public API of this app. 
 - `lib/impl` has the implementation logic of the app. All the code that can be tested, the *Functional Requirements* are there.
 - `lib/runtime` has the runtime loic or the *NonFunctional Requirementes*. This is code that deals with SuperVisors, Genservers, etc. 
+- Although this application has access to the code of `Hangman`, it does not launch it. Normal applications do this with every dependency, but here because we have `included_applications: [:hangman]`, the dependecy will be compiled, but not launched. This is great if we just want access to the API of a dependency, but we do not want to incurr in the overhead of actually running it.
